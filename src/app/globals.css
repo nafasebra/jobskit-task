@@ -3,8 +3,8 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  background-color: #f5f5f5;
-  color: rgba(0, 0, 0, 0.87);
+  background-color: #1c242a;
+  color: white;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

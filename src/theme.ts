@@ -47,6 +47,7 @@ const theme = createTheme({
     },
     secondary: {
       main: "#263238",
+      light: "#9e9e9e", // Added lighter color
       dark: "#1c242a",
     },
     success: {
