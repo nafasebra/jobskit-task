@@ -37,6 +37,14 @@ const theme = createTheme({
         },
       },
     },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          padding: '0.5rem',
+          borderRadius: "12px"
+        }
+      }
+    }
   },
   typography: {
     fontFamily: "inherit", // Inherit the font from the body

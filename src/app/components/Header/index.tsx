@@ -14,10 +14,10 @@ function Header() {
           paddingY: 10,
         }}
       >
-        <Typography variant="h3" fontWeight={800}>
+        <Typography variant="h4" fontWeight={800}>
           مسیر موفقیت شغلی از اینجا آغاز می‌شود
         </Typography>
-        <Typography variant="h5" sx={{ color: "secondary.light" }}>
+        <Typography variant="h6" sx={{ color: "secondary.light" }}>
           جست و جوی فرصت های شغلی
         </Typography>
       </Box>
