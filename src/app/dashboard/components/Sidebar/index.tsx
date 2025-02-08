@@ -40,6 +40,7 @@ const Sidebar = () => {
       open={isMenuOpen}
       onClose={() => setMenuOpen(false)}
       variant="permanent"
+      anchor="right"
       sx={{
         width: SIDEBAR_WIDTH,
         flexShrink: 0,

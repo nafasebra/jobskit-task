@@ -8,9 +8,9 @@ import DashboardNavbar from "../Navbar";
 
 function DashboardContainer({ children }: DashboardContainerProps) {
   return (
-    <Box component={"main"} sx={{ width: "100%" }}>
+    <Box component={"main"} sx={{ display: 'flex',width: "100%" }}>
       <Sidebar />
-      <Box component={"section"}>
+      <Box component={"section"} sx={{width: '100%'}}>
         <DashboardNavbar />
         <Box sx={{ padding: "1.5rem" }}>{children}</Box>
       </Box>

@@ -12,7 +12,7 @@ function DashboardNavbar() {
     <>
       <AppBar
         position="fixed"
-        sx={{ width: { sm: `calc(100% - 240px)` }, ml: { sm: "240px" }, backgroundColor: 'secondary.main', color: 'white' }}
+        sx={{ width: { sm: `calc(100% - 240px)` }, mr: { sm: "240px" }, backgroundColor: 'secondary.main', color: 'white' }}
       >
         <Toolbar>
           <IconButton
