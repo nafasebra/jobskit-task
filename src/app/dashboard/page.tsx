@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <Box sx={{paddingTop: '4rem'}}>
+    <Box sx={{ paddingTop: "4rem" }}>
       <Box
         sx={{
           display: "flex",
