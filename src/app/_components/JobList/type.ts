@@ -5,12 +5,12 @@ export type JobData = {
   datePosted: string; // ISO date string
   expirationDate: string; // ISO date string
   employmentType:
-    | "FULL_TIME"
-    | "PART_TIME"
-    | "CONTRACT"
-    | "INTERNSHIP"
-    | "FREELANCE"
-    | "TEMPORARY";
+    | 'FULL_TIME'
+    | 'PART_TIME'
+    | 'CONTRACT'
+    | 'INTERNSHIP'
+    | 'FREELANCE'
+    | 'TEMPORARY';
   positionLevel: string;
   company: {
     id: number;
@@ -42,7 +42,7 @@ export type JobData = {
     name: string;
     slug: string;
   };
-  jobType: "REMOTE" | "ONSITE" | "HYBRID";
+  jobType: 'REMOTE' | 'ONSITE' | 'HYBRID';
   views: number;
   shares: number;
 };

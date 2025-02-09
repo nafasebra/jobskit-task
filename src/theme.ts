@@ -1,23 +1,23 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   components: {
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
-          borderRadius: "12px",
-          color: "white", // White text inside input
-          "& .MuiInputBase-input": {
-            color: "white", // White text inside input
+          borderRadius: '12px',
+          color: 'white', // White text inside input
+          '& .MuiInputBase-input': {
+            color: 'white', // White text inside input
           },
-          "& .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#263238", // Default
+          '& .MuiOutlinedInput-notchedOutline': {
+            borderColor: '#263238', // Default
           },
-          "&:hover .MuiOutlinedInput-notchedOutline": {
-            borderColor: "white", // Hover effect
+          '&:hover .MuiOutlinedInput-notchedOutline': {
+            borderColor: 'white', // Hover effect
           },
-          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "white", // Active (focused) border color
+          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+            borderColor: 'white', // Active (focused) border color
           },
         },
       },
@@ -25,15 +25,15 @@ const theme = createTheme({
     MuiInputLabel: {
       styleOverrides: {
         root: {
-          borderRadius: "12px",
-          color: "#4f6269", // Lighter gray color
+          borderRadius: '12px',
+          color: '#4f6269', // Lighter gray color
         },
       },
     },
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: "12px", // Rounded button
+          borderRadius: '12px', // Rounded button
         },
       },
     },
@@ -41,25 +41,25 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           padding: '0.5rem',
-          borderRadius: "12px"
-        }
-      }
-    }
+          borderRadius: '12px',
+        },
+      },
+    },
   },
   typography: {
-    fontFamily: "inherit", // Inherit the font from the body
+    fontFamily: 'inherit', // Inherit the font from the body
   },
   palette: {
     primary: {
-      main: "#ffffff",
+      main: '#ffffff',
     },
     secondary: {
-      main: "#263238",
-      light: "#9e9e9e", // Added lighter color
-      dark: "#1c242a",
+      main: '#263238',
+      light: '#9e9e9e', // Added lighter color
+      dark: '#1c242a',
     },
     success: {
-      main: "#4caf50",
+      main: '#4caf50',
     },
   },
 });

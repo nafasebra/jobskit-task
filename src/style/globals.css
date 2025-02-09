@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   background-color: #1c242a;
   color: white;
   line-height: 1.5;

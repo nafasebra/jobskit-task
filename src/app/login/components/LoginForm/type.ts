@@ -1,3 +1,1 @@
-type LoginFormProps = {
-  
-}
+type LoginFormProps = {};

@@ -1,4 +1,4 @@
-import { JobData } from "../type";
+import { JobData } from '../type';
 
 export type JobListProps = {
   data?: JobData[];

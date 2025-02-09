@@ -1,5 +1,5 @@
-import { StateCreator } from "zustand";
-import { MainSlice } from "../type";
+import { StateCreator } from 'zustand';
+import { MainSlice } from '../type';
 
 const mainSlice: StateCreator<MainSlice> = (set) => ({
   count: 0,

@@ -1,5 +1,5 @@
-import { StateCreator } from "zustand";
-import { DashboardSlice } from "../type";
+import { StateCreator } from 'zustand';
+import { DashboardSlice } from '../type';
 
 const dashboardSlice: StateCreator<DashboardSlice> = (set) => ({
   isMenuOpen: false,

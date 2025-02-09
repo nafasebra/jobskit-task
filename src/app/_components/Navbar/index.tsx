@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { AppBar, Toolbar, Button, Box } from "@mui/material";
-import { useSession } from "next-auth/react";
-import Image from "next/image";
+import { AppBar, Toolbar, Button, Box } from '@mui/material';
+import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 
 function Navbar() {
   const { data: session } = useSession();
@@ -11,7 +11,7 @@ function Navbar() {
     <>
       <AppBar
         position="static"
-        sx={{ backgroundColor: "secondary.main", padding: 2 }}
+        sx={{ backgroundColor: 'secondary.main', padding: 2 }}
       >
         <Toolbar>
           <Box
@@ -19,16 +19,16 @@ function Navbar() {
             href="/"
             sx={{
               flexGrow: 1,
-              display: "flex",
-              alignItems: "center",
-              textDecoration: "none",
+              display: 'flex',
+              alignItems: 'center',
+              textDecoration: 'none',
             }}
           >
             <Image
               src="/logo.webp"
               width={1000}
               height={0}
-              style={{ width: "auto", height: "40px" }}
+              style={{ width: 'auto', height: '40px' }}
               alt="logo of jobskit"
             />
           </Box>
@@ -48,6 +48,6 @@ function Navbar() {
   );
 }
 
-Navbar.displayName = "Navbar";
+Navbar.displayName = 'Navbar';
 
 export default Navbar;

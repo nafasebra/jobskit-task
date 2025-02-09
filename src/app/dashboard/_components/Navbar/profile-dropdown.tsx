@@ -1,6 +1,6 @@
-import { AccountCircle } from "@mui/icons-material";
-import { Avatar, IconButton, Menu, MenuItem } from "@mui/material";
-import React, { useState } from "react";
+import { AccountCircle } from '@mui/icons-material';
+import { Avatar, IconButton, Menu, MenuItem } from '@mui/material';
+import React, { useState } from 'react';
 
 function ProfileDropdown() {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);

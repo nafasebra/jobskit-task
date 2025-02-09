@@ -1,27 +1,30 @@
-import NextAuth from "next-auth"
-import CredentialsProvider from "next-auth/providers/credentials"
+import NextAuth from 'next-auth';
+import CredentialsProvider from 'next-auth/providers/credentials';
 
 const handler = NextAuth({
   providers: [
     CredentialsProvider({
-      name: "Credentials",
+      name: 'Credentials',
       credentials: {
-        username: { label: "Username", type: "text" },
-        password: { label: "Password", type: "password" },
+        username: { label: 'Username', type: 'text' },
+        password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
         // Add your own logic here to validate the credentials
         // This is just a simple example
-        if (credentials?.username === "user" && credentials?.password === "password") {
-          return { id: "1", name: "User", email: "user@example.com" }
+        if (
+          credentials?.username === 'user' &&
+          credentials?.password === 'password'
+        ) {
+          return { id: '1', name: 'User', email: 'user@example.com' };
         }
-        return null
+        return null;
       },
     }),
   ],
   pages: {
-    signIn: "/",
+    signIn: '/',
   },
-})
+});
 
-export { handler as GET, handler as POST }
+export { handler as GET, handler as POST };

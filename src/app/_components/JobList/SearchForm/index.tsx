@@ -1,13 +1,13 @@
-import { InputAdornment, TextField } from "@mui/material";
-import React, { useState } from "react";
-import SearchIcon from "@mui/icons-material/Search";
+import { InputAdornment, TextField } from '@mui/material';
+import React, { useState } from 'react';
+import SearchIcon from '@mui/icons-material/Search';
 
 function SearchForm() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
 
   const handleSearchSubmit = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Enter") {
-      console.log("Search submitted:", search);
+    if (event.key === 'Enter') {
+      console.log('Search submitted:', search);
     }
   };
 
@@ -23,7 +23,7 @@ function SearchForm() {
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
-            <SearchIcon color={"primary"} />
+            <SearchIcon color={'primary'} />
           </InputAdornment>
         ),
       }}
