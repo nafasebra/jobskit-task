@@ -12,7 +12,7 @@ function DashboardContainer({ children }: DashboardContainerProps) {
       <Sidebar />
       <Box component={"section"} sx={{width: '100%'}}>
         <DashboardNavbar />
-        <Box sx={{ padding: "1.5rem" }}>{children}</Box>
+        <Box sx={{ padding: "1.5rem", mt: '4rem' }}>{children}</Box>
       </Box>
     </Box>
   );

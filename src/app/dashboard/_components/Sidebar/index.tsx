@@ -29,7 +29,7 @@ const menuItems = [
   {
     text: "لیست جاب ها",
     icon: <WorkOutline />,
-    path: "/dashboard/joblist",
+    path: "/joblist",
   },
 ];
 

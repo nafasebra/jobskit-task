@@ -1,4 +1,4 @@
-import DashboardContainer from "./components/DashboardContainer";
+import DashboardContainer from "./_components/DashboardContainer";
 
 export default function DashboardLayout({
   children,
