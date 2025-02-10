@@ -1,5 +1,6 @@
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import { pages } from 'next/dist/build/templates/app-page';
 
 export const authOptions = {
   providers: [
@@ -23,6 +24,9 @@ export const authOptions = {
       },
     }),
   ],
+  pages: {
+    signIn: "/login", // Custom login page
+  },
   callbacks: {
     async jwt({ token, user }: any) {
       console.log(token, user)

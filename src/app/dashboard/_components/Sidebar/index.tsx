@@ -30,7 +30,7 @@ const menuItems = [
   {
     text: 'لیست جاب ها',
     icon: <WorkOutline />,
-    path: '/joblist',
+    path: '/',
   },
 ];
 

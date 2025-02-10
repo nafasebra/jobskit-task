@@ -41,7 +41,7 @@ function Navbar() {
               </Button>
             </Link>
           ) : (
-            <Link href="/">
+            <Link href="/login">
               <Button variant="contained" color="primary">
                 ورود
               </Button>
