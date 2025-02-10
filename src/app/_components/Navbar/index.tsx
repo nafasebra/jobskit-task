@@ -3,6 +3,7 @@
 import { AppBar, Toolbar, Button, Box } from '@mui/material';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function Navbar() {
   const { data: session } = useSession();
@@ -34,13 +35,17 @@ function Navbar() {
           </Box>
 
           {session?.user ? (
-            <Button variant="contained" color="primary">
-              داشبورد
-            </Button>
+            <Link href="/dashboard">
+              <Button variant="contained" color="primary">
+                داشبورد
+              </Button>
+            </Link>
           ) : (
-            <Button variant="contained" color="primary">
-              ورود
-            </Button>
+            <Link href="/">
+              <Button variant="contained" color="primary">
+                ورود
+              </Button>
+            </Link>
           )}
         </Toolbar>
       </AppBar>

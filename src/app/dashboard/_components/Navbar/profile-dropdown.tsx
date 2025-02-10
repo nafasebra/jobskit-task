@@ -1,5 +1,9 @@
+'use client';
+
 import { AccountCircle } from '@mui/icons-material';
 import { Avatar, IconButton, Menu, MenuItem } from '@mui/material';
+import { signOut } from 'next-auth/react';
+import { redirect } from 'next/navigation';
 import React, { useState } from 'react';
 
 function ProfileDropdown() {
@@ -15,10 +19,15 @@ function ProfileDropdown() {
 
   const handleHomepageClick = () => {
     handleMenuClose();
+    redirect('/');
   };
 
   const handleLogoutClick = () => {
     handleMenuClose();
+    signOut({
+      redirect: true,
+      callbackUrl: '/',
+    });
   };
 
   return (

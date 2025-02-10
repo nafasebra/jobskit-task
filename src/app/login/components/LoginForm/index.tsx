@@ -3,23 +3,23 @@
 import React from 'react';
 import { Button, TextField, Box, Typography, Container } from '@mui/material';
 import { signIn } from 'next-auth/react';
+import { redirect, useRouter } from 'next/navigation';
 
 function LoginForm() {
+  const router = useRouter()
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
 
     const result = await signIn('credentials', {
-      username: data.get('username'),
-      password: data.get('password'),
-      redirect: false,
+      username: event.target[0].value,
+      password: event.target[2].value,
+      redirect: true,
+      callbackUrl: '/dashboard'
     });
 
     if (result?.error) {
       console.error(result.error);
-    } else {
-      // Redirect or update UI state
-      window.location.href = '/';
     }
   };
 
@@ -43,7 +43,7 @@ function LoginForm() {
         >
           ورود به جابزکیت
         </Typography>
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+        <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
           <TextField
             margin="normal"
             required

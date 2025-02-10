@@ -1,7 +1,7 @@
 'use client';
 
 import { Box } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { DashboardContainerProps } from './type';
 import Sidebar from '../Sidebar';
 import DashboardNavbar from '../Navbar';
