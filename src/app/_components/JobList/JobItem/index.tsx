@@ -1,32 +1,30 @@
 import React from 'react';
 
 import {
-  Grid,
-  Paper,
   Card,
   Stack,
   Button,
   Avatar,
   ListItemText,
   Typography,
-  Link,
   Divider,
-  Box,
 } from '@mui/material';
 import ShareIcon from '@mui/icons-material/Share';
 import WorkIcon from '@mui/icons-material/Work';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import FlagIcon from '@mui/icons-material/Flag';
+import { JobItemProps } from './type';
 
-function JobItem() {
+function JobItem({ data }: JobItemProps) {
   return (
     <Card
       sx={{
         backgroundColor: 'secondary.main',
         color: 'white',
         direction: 'ltr',
-        width: '100%',
+        width: '100%', // Ensure the card takes full width of the grid item
+        height: '100%', // Ensure consistent height
       }}
     >
       <Stack
@@ -44,8 +42,8 @@ function JobItem() {
 
       <Stack direction="row" spacing={2} alignItems="center" sx={{ p: 2 }}>
         <Avatar
-          src="https://jobs-kit.com/api/file/download/164255"
-          alt="Get Your Beach On Travel"
+          src={data?.company.imageURL}
+          alt={data?.company.name}
           sx={{ borderRadius: '12px' }}
         />
         <ListItemText
@@ -54,24 +52,31 @@ function JobItem() {
               <Typography
                 variant="body1"
                 component="a"
-                href="/job/418460/"
+                // href="/job/418460/"
                 sx={{ textDecoration: 'none', color: 'white' }}
               >
-                Wanderlust Marketing Specialist
+                {data?.title}
               </Typography>
               <Typography
                 variant="body2"
                 component="a"
-                href="/job/company/20729/"
+                // href="/job/company/20729/"
                 sx={{ textDecoration: 'none', color: 'success.main' }}
               >
-                Get Your Beach On Travel
+                {data?.company.name}
               </Typography>
             </Stack>
           }
           secondary={
             <Typography variant="caption" sx={{ color: 'secondary.light' }}>
-              Posted date: 06 Feb 2025
+              Posted date:{' '}
+              {new Date(
+                data?.datePosted || '2025-02-06T00:00:00.000Z'
+              ).toLocaleDateString('en-US', {
+                month: 'short',
+                day: '2-digit',
+                year: 'numeric',
+              })}
             </Typography>
           }
         />
@@ -86,7 +91,7 @@ function JobItem() {
       >
         <Stack direction="row" spacing={1} alignItems="center">
           <WorkIcon sx={{ fontSize: '1rem' }} />
-          <Typography variant="caption">remote</Typography>
+          <Typography variant="caption">{data?.jobType}</Typography>
         </Stack>
         <Stack direction="row" spacing={1} alignItems="center">
           <AccountCircleIcon sx={{ fontSize: '1rem' }} />
@@ -94,11 +99,13 @@ function JobItem() {
         </Stack>
         <Stack direction="row" spacing={1} alignItems="center">
           <AccessTimeIcon sx={{ fontSize: '1rem' }} />
-          <Typography variant="caption">full time</Typography>
+          <Typography variant="caption">{data?.employmentType}</Typography>
         </Stack>
         <Stack direction="row" spacing={1} alignItems="center">
           <FlagIcon sx={{ fontSize: '1rem' }} />
-          <Typography variant="caption">United States</Typography>
+          <Typography variant="caption">
+            {data?.country.toLowerCase()}
+          </Typography>
         </Stack>
       </Stack>
     </Card>
