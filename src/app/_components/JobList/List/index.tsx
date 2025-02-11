@@ -2,7 +2,7 @@
 
 import React, { Suspense } from 'react';
 import JobItem from '../JobItem';
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, Pagination } from '@mui/material';
 import Loading from '@/components/loading';
 
 async function fetchData() {
@@ -24,7 +24,7 @@ export default async function List() {
     <Suspense fallback={<Loading />}>
       <Box
         sx={{
-          paddingBottom: '3rem',
+          paddingBottom: '2rem',
           paddingTop: '2rem',
           overflow: 'hidden',
         }}
@@ -45,6 +45,28 @@ export default async function List() {
             </Grid>
           ))}
         </Grid>
+      </Box>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          paddingBottom: '5rem',
+          direction: 'ltr',
+        }}
+      >
+        <Pagination
+          count={6}
+          page={1}
+          color="primary"
+          sx={{
+            '& .MuiPaginationItem-root': {
+              color: 'white',
+              '&.Mui-selected': {
+                color: 'black',
+              },
+            },
+          }}
+        />
       </Box>
     </Suspense>
   );
