@@ -3,11 +3,10 @@ import { withAuth } from 'next-auth/middleware';
 // Protect specific routes
 export default withAuth({
   pages: {
-    signIn: '/login', // Redirect unauthenticated users here
+    signIn: '/login',
   },
 });
-
 // Apply middleware to specific routes
 export const config = {
-  matcher: ['/dashboard/:path*', '/dashboard'], // Protect `/dashboard` and its subpaths
+  matcher: ['/dashboard', '/dashboard/:path*'], // Protect `/dashboard` and its subpaths
 };

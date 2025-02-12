@@ -11,37 +11,42 @@ export const authOptions = {
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        console.log(credentials)
+        console.log(credentials);
         if (
           credentials?.username === 'user' &&
           credentials?.password === '123456789'
         ) {
           return { id: '1', name: 'User', email: 'user@example.com' };
-        }
-        else {
-          throw new Error('errrrrrrrrrrrrrrr')
+        } else {
+          throw new Error('Failed to login');
         }
       },
     }),
   ],
   pages: {
-    signIn: "/login", // Custom login page
+    signIn: '/login',
   },
   callbacks: {
     async jwt({ token, user }: any) {
-      console.log(token, user)
       if (user) {
         token.id = user.id;
+        token.exp = Math.floor(Date.now() / 1000) + 30 * 60;
+      }
+      if (Date.now() >= token.exp * 1000) {
+        throw new Error('Token expired');
       }
       return token;
     },
     async session({ session, token }: any) {
-      console.log(session, token)
       session.user.id = token.id;
+      session.expires = new Date(token.exp * 1000).toISOString();
       return session;
     },
   },
-  secret: process.env.NEXTAUTH_SECRET, // Required
+  session: {
+    maxAge: 30 * 60, // 30 minutes in seconds
+  },
+  secret: process.env.NEXTAUTH_SECRET,
 };
 
 const handler = NextAuth(authOptions);
