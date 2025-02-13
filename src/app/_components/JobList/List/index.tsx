@@ -4,11 +4,16 @@ import React, { Suspense } from 'react';
 import JobItem from '../JobItem';
 import { Box, Grid, Pagination } from '@mui/material';
 import Loading from '@/components/loading';
+import { searchParamsType } from '@/types/params';
+import PaginationJobs from '../Pagination';
 
-async function fetchData() {
-  const response = await fetch('https://jobs-kit.com/api/job/all', {
-    cache: 'no-store', // For fresh data on every request
-  });
+async function fetchData(page: string = '1') {
+  const response = await fetch(
+    `https://jobs-kit.com/api/job/all?page=${page}`,
+    {
+      cache: 'no-store',
+    }
+  );
 
   if (!response.ok) {
     throw new Error('Failed to fetch data');
@@ -17,8 +22,12 @@ async function fetchData() {
   return response.json();
 }
 
-export default async function List() {
-  const data = await fetchData(); // Added await here
+export default async function List({
+  serachParams,
+}: {
+  serachParams: searchParamsType;
+}) {
+  const data = await fetchData(serachParams?.page);
 
   return (
     <Suspense fallback={<Loading />}>
@@ -54,19 +63,7 @@ export default async function List() {
           direction: 'ltr',
         }}
       >
-        <Pagination
-          count={6}
-          page={1}
-          color="primary"
-          sx={{
-            '& .MuiPaginationItem-root': {
-              color: 'white',
-              '&.Mui-selected': {
-                color: 'black',
-              },
-            },
-          }}
-        />
+        <PaginationJobs />
       </Box>
     </Suspense>
   );

@@ -1,14 +1,32 @@
+'use server'
+
 import Navbar from './_components/Navbar';
 import Header from './_components/Header';
-import JobList from './_components/JobList/container';
+import { Box, Container } from '@mui/material';
+import SearchForm from './_components/JobList/SearchForm';
+import List from './_components/JobList/List';
+import { searchParamsType } from '@/types/params';
 
-export default function Home() {
-
+export default async function Home({ searchParams }: {searchParams: searchParamsType}) {
+  console.log(searchParams)
   return (
     <>
       <Navbar />
       <Header />
-      <JobList />
+      <Container maxWidth="lg">
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 6,
+          }}
+        >
+          <Container maxWidth="md">
+            <SearchForm />
+          </Container>
+          <List serachParams={searchParams} />
+        </Box>
+      </Container>
     </>
   );
 }

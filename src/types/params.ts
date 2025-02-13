@@ -1,0 +1,1 @@
+export type searchParamsType = { page?: string; sortBy?: string }
