@@ -16,7 +16,7 @@ function PaginationJobs() {
     if (value) {
       params.set("page", value.toString());
     } else {
-      params.delete("[age");
+      params.delete("page");
     }
   
     const newUrl = `${pathname}?${params.toString()}`;

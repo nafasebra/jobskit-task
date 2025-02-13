@@ -1,1 +1,1 @@
-export type searchParamsType = { page?: string; sortBy?: string }
+export type searchParamsType = { page?: string; sortBy?: string, title?: string }

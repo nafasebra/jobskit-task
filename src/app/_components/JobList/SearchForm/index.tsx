@@ -3,13 +3,25 @@
 import { InputAdornment, TextField } from '@mui/material';
 import React, { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 function SearchForm() {
   const [search, setSearch] = useState('');
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const params = new URLSearchParams(searchParams);
+  const { replace } = useRouter()
 
   const handleSearchSubmit = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
-      console.log('Search submitted:', search);
+      if (search) {
+        params.set("title", search.toString());
+      } else {
+        params.delete("title");
+      }
+    
+      const newUrl = `${pathname}?${params.toString()}`;
+      replace(newUrl)
     }
   };
 

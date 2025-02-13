@@ -7,9 +7,9 @@ import Loading from '@/components/loading';
 import { searchParamsType } from '@/types/params';
 import PaginationJobs from '../Pagination';
 
-async function fetchData(page: string = '1') {
+async function fetchData(page: string = '1', title: string = "") {
   const response = await fetch(
-    `https://jobs-kit.com/api/job/all?page=${page}`,
+    `https://jobs-kit.com/api/job/all?title=${title}&page=${page}`,
     {
       cache: 'no-store',
     }
@@ -23,11 +23,11 @@ async function fetchData(page: string = '1') {
 }
 
 export default async function List({
-  serachParams,
+  searchParams,
 }: {
-  serachParams: searchParamsType;
+  searchParams: searchParamsType;
 }) {
-  const data = await fetchData(serachParams?.page);
+  const data = await fetchData(searchParams?.page, searchParams?.title);
 
   return (
     <Suspense fallback={<Loading />}>

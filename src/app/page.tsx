@@ -8,7 +8,6 @@ import List from './_components/JobList/List';
 import { searchParamsType } from '@/types/params';
 
 export default async function Home({ searchParams }: {searchParams: searchParamsType}) {
-  console.log(searchParams)
   return (
     <>
       <Navbar />
@@ -24,7 +23,7 @@ export default async function Home({ searchParams }: {searchParams: searchParams
           <Container maxWidth="md">
             <SearchForm />
           </Container>
-          <List serachParams={searchParams} />
+          <List searchParams={searchParams} />
         </Box>
       </Container>
     </>
