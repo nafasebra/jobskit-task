@@ -42,6 +42,8 @@ const theme = createTheme({
         root: {
           padding: '0.5rem',
           borderRadius: '12px',
+          backgroundColor: '#263238',
+          color: 'inherit'
         },
       },
     },
