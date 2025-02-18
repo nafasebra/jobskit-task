@@ -53,7 +53,7 @@ const Links = [
 
 function Footer() {
   return (
-    <footer>
+    <footer> 
       {/* logo */}
       <p>
         جابزکیت تلاشی برای کمک به ایرانیان برای یافتن شغل‌های دورکاری، ریلوکیشن

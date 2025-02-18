@@ -2,7 +2,7 @@
 
 import { Box, Button, Container, Typography } from '@mui/material';
 import { searchParamsType } from '@/types/params';
-import Navbar from '../../_components/Navbar';
+import Navbar from '@/app/_components/Navbar';
 import JobDescription from './_components/JobDescription';
 import JobDetails from './_components/JobDetails';
 import Link from 'next/link';

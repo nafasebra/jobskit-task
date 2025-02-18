@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
 
-export default function Home() {
+export default function Bookmarks() {
   return (
     <>
       <Typography fontSize={'1.5rem'} fontWeight={800} variant="h6">
