@@ -9,7 +9,7 @@ import PaginationJobs from '../Pagination';
 
 async function fetchData(page: string = '1', title: string = "") {
   const response = await fetch(
-    `https://jobs-kit.com/api/job/all?title=${title}&page=${page}`,
+    `https://jobs-kit.com/api/job/all?title=${title || ""}&page=${page || "1"}`,
     {
       cache: 'no-store',
     }
